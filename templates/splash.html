@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Yükleniyor</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- 4 sn sonra otomatik yönlendirme -->
+    <meta http-equiv="refresh" content="4; url={{ url_for('index') }}" />
+
+    <style>
+      body {
+        background: #fffacd;
+        height: 100vh;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .fox {
+        width: 300px;
+        height: auto;
+        object-fit: contain;
+      }
+    </style>
+  </head>
+  <body>
+    <img
+      class="fox"
+      src="{{ url_for('static', filename='images/giphy.gif') }}"
+      alt="yükleniyor..."
+    />
+  </body>
+</html>

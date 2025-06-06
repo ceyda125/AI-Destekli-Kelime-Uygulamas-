@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Görsellerle İngilizce Öğrenelim</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background: #fffaf0;
+        font-family: "Comic Neue", cursive;
+        text-align: center;
+        padding: 40px;
+        color: #333;
+      }
+      h1 {
+        font-size: 40px;
+        color: #ff6347;
+        margin-bottom: 30px;
+      }
+      .buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+      }
+      .btn {
+        background-color: #87cefa;
+        padding: 20px 30px;
+        border-radius: 15px;
+        border: none;
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer;
+        color: white;
+        text-decoration: none;
+        transition: transform 0.2s ease;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+      .btn:hover {
+        transform: scale(1.05);
+        background-color: #00bfff;
+      }
+      .emoji {
+        font-size: 32px;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>📚 Görsellerle İngilizce Öğrenelim 🎨</h1>
+    <p>Resim yükle, kamera ile çek veya kelimeleri incele!</p>
+
+    <div class="buttons">
+      <a href="/upload" class="btn"><span class="emoji">📤</span>Resim Yükle</a>
+      <a href="/camera" class="btn"><span class="emoji">📷</span>Resim Çek</a>
+      <a href="/words" class="btn"
+        ><span class="emoji">🔤</span>Kelimeleri Listele</a
+      >
+    </div>
+  </body>
+</html>

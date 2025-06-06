@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Resim Çek - Görsellerle İngilizce Öğrenelim</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background: #e0ffff;
+        font-family: "Comic Neue", cursive;
+        text-align: center;
+        padding: 40px;
+      }
+      video,
+      canvas {
+        width: 300px;
+        height: 225px;
+        margin: 10px;
+        border-radius: 15px;
+        border: 3px solid #00ced1;
+      }
+      button {
+        margin-top: 15px;
+        padding: 10px 20px;
+        font-size: 18px;
+        background-color: #ff69b4;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #ff1493;
+      }
+      a {
+        display: block;
+        margin-top: 30px;
+        color: #444;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>📷 Kamera ile Resim Çek</h2>
+    <video id="video" autoplay></video>
+    <canvas id="canvas" style="display: none"></canvas>
+
+    <form id="cameraForm" method="POST" action="/predict_camera">
+      <input type="hidden" name="image_data" id="image_data" />
+      <button type="button" onclick="takePhoto()">📸 Fotoğraf Çek</button>
+    </form>
+
+    <a href="/index">⬅️ Ana Sayfa</a>
+
+    <script>
+      const video = document.getElementById("video");
+      const canvas = document.getElementById("canvas");
+      const imageDataInput = document.getElementById("image_data");
+
+      navigator.mediaDevices.getUserMedia({ video: true }).then((stream) => {
+        video.srcObject = stream;
+      });
+
+      function takePhoto() {
+        canvas.style.display = "block";
+        canvas
+          .getContext("2d")
+          .drawImage(video, 0, 0, canvas.width, canvas.height);
+        const dataUrl = canvas.toDataURL("image/png");
+        imageDataInput.value = dataUrl;
+        document.getElementById("cameraForm").submit();
+      }
+    </script>
+  </body>
+</html>

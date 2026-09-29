@@ -23,7 +23,3 @@ ve tarayıcınızda
 `http://localhost:5000` 
 adresine giderek uygulamayı kullanmaya başlayın.
 
-Bu proje, 
-[ceyda125](https://github.com/ceyda125), 
-[srefeturk](https://github.com/srefeturk) ve 
-[mstfckrc](https://github.com/mstfckrc) tarafından birlikte geliştirilmiştir.
